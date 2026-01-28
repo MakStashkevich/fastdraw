@@ -1,0 +1,240 @@
+/* Modal Container */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-version {
+  position: absolute;
+  top: 40px;
+  right: 80px;
+  z-index: 1010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1010;
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.close-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Whiteboard Wrapper */
+.whiteboard-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  z-index: 1001;
+}
+
+.whiteboard-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+}
+
+.whiteboard-image {
+  cursor: default;
+}
+
+/* Cursor Modes */
+.whiteboard-wrapper.cursor-draw,
+.whiteboard-wrapper.cursor-erase {
+  cursor: crosshair;
+}
+
+.whiteboard-wrapper.cursor-pan {
+  cursor: grab;
+}
+
+.whiteboard-wrapper.cursor-text {
+  cursor: text;
+}
+
+.whiteboard-wrapper.cursor-pan:active {
+  cursor: grabbing;
+}
+
+/* Lock Icon */
+.lock-icon {
+  position: absolute;
+  transform: translate(-100%, 0);
+  z-index: 10;
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lock-icon:hover {
+  background-color: #fff;
+}
+
+/* Toolbar */
+.toolbar {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  backdrop-filter: blur(5px);
+  
+  opacity: 0;
+  transform: translate(-50%, 100px);
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+  z-index: 10;
+}
+
+.toolbar.is-open {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brush-preview-group,
+.font-size-group {
+  min-width: 40px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.font-size-group span {
+  font-size: 14px;
+  min-width: 20px;
+  text-align: right;
+}
+
+.brush-preview {
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  transition: all 0.1s ease;
+  flex-shrink: 0;
+}
+
+.toolbar label {
+  font-size: 14px;
+}
+
+.toolbar button {
+  padding: 6px;
+  white-space: nowrap;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.toolbar button:hover {
+  background-color: #f0f0f0;
+}
+
+.toolbar button.active {
+  background-color: #e0e0e0;
+  border-color: #999;
+}
+
+.toolbar button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolbar .save-btn {
+  background-color: var(--avances-primary-500, #3b82f6);
+  color: white;
+  border-color: var(--avances-primary-500, #3b82f6);
+}
+
+.toolbar .save-btn:hover {
+  background-color: var(--avances-primary-600, #2563eb);
+  color: white;
+  border-color: var(--avances-primary-600, #2563eb);
+}
+
+/* Animations */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: max-width .3s ease-in-out, opacity .2s .1s ease;
+  overflow: hidden;
+  max-width: 200px;
+}
+
+.slide-fade-leave-active {
+  transition: max-width .3s .1s ease-in-out, opacity .2s ease;
+  overflow: hidden;
+  max-width: 200px;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  max-width: 0;
+  opacity: 0;
+}

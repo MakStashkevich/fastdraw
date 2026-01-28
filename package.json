@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "name": "fastdraw-monorepo",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev --parallel",
+    "start": "turbo start",
+    "test": "turbo test",
+    "test:e2e": "turbo test:e2e",
+    "lint": "prettier . --write",
+    "clean": "turbo clean"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.0",
+    "@testing-library/react": "^14.2.1",
+    "@types/node": "20.5.7",
+    "@types/react": "^18.2.65",
+    "@types/react-dom": "18.2.7",
+    "jsdom": "^24.0.0",
+    "prettier": "^3.2.5",
+    "tsup": "^8.3.5",
+    "turbo": "^1.10.12",
+    "typescript": "^5.4.2",
+    "vitest": "^1.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makstashkevich/translate.git"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  }
+}
