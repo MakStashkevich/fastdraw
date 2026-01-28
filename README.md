@@ -8,7 +8,7 @@ FastDraw is a WebGL-powered whiteboard library designed to handle large-scale dr
 
 ## Background
 
-![Demo FastDraw Optimized Speed - GIF of 50k paths zoom incoming](./assets/demo.gif)
+![Demo FastDraw Optimized Speed](./assets/demo.gif)
 
 Many existing open-source canvas solutions struggle with performance when handling more than 1,000 objects. Paid alternatives are often expensive or restrictive.
 
@@ -42,8 +42,6 @@ FastDraw addresses all of these, providing a high-performance, ready-to-use canv
 * **Undo/redo functionality** implemented using the command pattern
 * **Quadtree acceleration** for fast selection
 * **Compact size** – core library ~50KB gzipped
-
-![Demo FastDraw Optimized Speed](./assets/demo.gif)
 
 ---
 
